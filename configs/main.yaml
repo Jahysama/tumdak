@@ -1,0 +1,7 @@
+telethon:
+  - api_hash: 'api_hash'
+  - api_id: 42
+  - chat_url: 'chat_url'
+  - database: 'chat_data'
+  - max_messages: 1000
+  - timeout: 3.0

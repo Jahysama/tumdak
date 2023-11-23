@@ -1,0 +1,21 @@
+services:
+  scrapper:
+    build: ../Scrapper
+    container_name: scrapper
+    ports:
+      - "${SCRAPPER_PORT}:8000"
+    depends_on:
+      - pgdatabase
+
+  pgdatabase:
+    container_name: pgdatabase
+    image: postgres:13
+    volumes:
+      - "./stats:${POSTGRES_VOLUME}:rw"
+    ports:
+      - "${POSTGRES_PORT}:5432"
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "${PGADMIN_PORT}:80"
+
